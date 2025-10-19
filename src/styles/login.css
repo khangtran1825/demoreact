@@ -1,20 +1,23 @@
-/* src/styles/login.css
-   Styles for Login page: email/password, Google sign-in, phone/OTP
-   Paste/merge vào file styles của bạn.
-*/
+/* ================= Global ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* root variables assumed present; define safe fallbacks */
+/* root variables */
 :root {
   --brand-primary: #dd0000;
   --muted: #6b7280;
-  --shadow: 0 8px 28px rgba(16,24,40,0.08);
+  --shadow: 0 8px 28px rgba(16, 24, 40, 0.08);
   --bg: #f7f7f7;
   --container-max: 1280px;
+  --topbar-h: 60px;
 }
 
-/* Page layout */
+/* ================= Page layout ================= */
 .login-page {
-  min-height: calc(100vh - var(--topbar-h, 60px));
+  min-height: calc(100vh - var(--topbar-h));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +33,7 @@
   border-radius: 12px;
   padding: 22px;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 /* Headings */
@@ -48,7 +51,7 @@
 /* Errors */
 .form-error {
   background: #fff3f3;
-  border: 1px solid rgba(221,0,0,0.08);
+  border: 1px solid rgba(221, 0, 0, 0.08);
   color: #b91c1c;
   padding: 10px;
   border-radius: 8px;
@@ -56,15 +59,17 @@
   font-weight: 600;
 }
 
-/* Form fields */
+/* ================= Form Fields ================= */
 .login-form .field {
   margin-bottom: 12px;
 }
+
 .login-form .label {
   font-size: 13px;
   color: var(--muted);
   margin-bottom: 6px;
 }
+
 .login-form input[type="email"],
 .login-form input[type="password"],
 .login-form input[type="tel"],
@@ -72,16 +77,17 @@
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   outline: none;
   font-size: 14px;
   background: #fff;
-  box-shadow: 0 6px 18px rgba(16,24,40,0.02);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.02);
   transition: box-shadow .15s ease, border-color .15s ease;
 }
+
 .login-form input:focus {
-  border-color: rgba(221,0,0,0.9);
-  box-shadow: 0 8px 20px rgba(221,0,0,0.06);
+  border-color: rgba(221, 0, 0, 0.9);
+  box-shadow: 0 8px 20px rgba(221, 0, 0, 0.06);
 }
 
 /* form row & checkbox */
@@ -91,6 +97,7 @@
   align-items: center;
   margin-bottom: 12px;
 }
+
 .checkbox {
   display: flex;
   gap: 8px;
@@ -99,34 +106,43 @@
   color: var(--muted);
 }
 
-/* Buttons */
+/* ================= Buttons ================= */
 .btn {
   padding: 9px 12px;
   border-radius: 10px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.btn:disabled { opacity: 0.6; cursor: default; }
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
 
-.btn.full { width: 100%; }
+.btn.full {
+  width: 100%;
+}
 
 /* Primary CTA */
 .btn-primary {
   background: var(--brand-primary);
   color: #fff;
   border: none;
-  box-shadow: 0 8px 24px rgba(221,0,0,0.14);
+  box-shadow: 0 8px 24px rgba(221, 0, 0, 0.14);
 }
-.btn-primary:hover { background: #c70000; }
+
+.btn-primary:hover {
+  background: #c70000;
+}
 
 /* subtle secondary */
 .btn.secondary {
   background: #fff;
   color: #111;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* Divider */
@@ -137,17 +153,14 @@
   color: var(--muted);
 }
 
-/* ===== Google sign-in container =====
-   Google Identity Service renders its own button inside the ref container.
-   We style the container so the rendered button looks aligned with page.
-*/
+/* ================= Google Sign-in ================= */
 .login-google {
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
 }
 
-/* fallback style when GSI not available: show a styled button */
+/* fallback style for GSI not ready */
 .google-fallback {
   display: inline-flex;
   align-items: center;
@@ -155,46 +168,66 @@
   padding: 10px 14px;
   border-radius: 10px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   font-weight: 700;
 }
-.google-fallback img { width: 18px; height: 18px; display: inline-block; }
 
-/* ensure gsi button area doesn't overflow */
-.login-google > div,
-.login-google > .google-fallback {
+.google-fallback img {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+/* ensure button container width */
+.login-google>div,
+.login-google>.google-fallback {
   width: 100%;
   max-width: 360px;
   display: flex;
   justify-content: center;
 }
 
-/* ===== Phone / OTP styles ===== */
-.otp-section { margin-top: 8px; }
-.otp-row { display: flex; gap: 8px; align-items: center; }
+/* ================= Phone / OTP ================= */
+.otp-section {
+  margin-top: 8px;
+}
 
-/* OTP input narrower */
+.otp-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .otp-input {
   width: 160px;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   outline: none;
   font-size: 14px;
 }
 
+.otp-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.otp-note {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 /* small muted text */
-.small { font-size: 13px; color: var(--muted); }
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
 
-/* helper message under OTP */
-.otp-note { margin-top: 8px; font-size: 13px; color: var(--muted); }
-
-/* action group for phone: same spacing as others */
-.otp-actions { display: flex; gap: 8px; margin-top: 8px; }
-
-/* responsive & truncation for long names in header (if reused) */
+/* ================= Misc / Utility ================= */
 .label-truncate {
   max-width: 140px;
   overflow: hidden;
@@ -203,7 +236,6 @@
   display: inline-block;
 }
 
-/* cart-badge (if shown near header) */
 .cart-badge {
   display: inline-block;
   min-width: 20px;
@@ -216,20 +248,73 @@
   font-size: 12px;
 }
 
-/* ===== Responsive ===== */
+/* ================= Responsive ================= */
 @media (max-width: 900px) {
-  .login-card { padding: 18px; }
+  .login-card {
+    padding: 18px;
+  }
+
   .login-form input[type="email"],
   .login-form input[type="password"],
-  .login-form input[type="tel"] { font-size: 15px; }
-  .login-google > div { max-width: 320px; }
+  .login-form input[type="tel"] {
+    font-size: 15px;
+  }
+
+  .login-google>div {
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 520px) {
-  .login-card { margin: 0 12px; width: calc(100% - 24px); }
-  .otp-input { width: 120px; }
-  .login-google > div { max-width: 100%; padding: 0 12px; box-sizing: border-box; }
+  .login-card {
+    margin: 0 12px;
+    width: calc(100% - 24px);
+  }
+
+  .otp-input {
+    width: 120px;
+  }
+
+  .login-google>div {
+    max-width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
   .login-form input[type="email"],
   .login-form input[type="password"],
-  .login-form input[type="tel"] { width: 100%; }
+  .login-form input[type="tel"] {
+    width: 100%;
+  }
+}
+
+/* ================= Modal Overrides ================= */
+.phone-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.phone-form {
+  position: relative;
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 90%;
+  z-index: 1001;
+}
+
+.phone-close {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
 }
