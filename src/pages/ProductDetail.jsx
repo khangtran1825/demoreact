@@ -28,8 +28,8 @@ export default function ProductDetail(){
 
   useEffect(()=> { document.title = p.name + ' | MobileHub' }, [p.name])
 
-  // chua co gio hang 
-  const onAddCart = useCart(p).add; alert('Đã thêm vào giỏ hàng') 
+  // fix: do NOT call hook in render or call add on mount
+  const onAddCart = (item) => { add(item); alert('Đã thêm vào giỏ hàng') }
   const onBuyNow = (item) => { add(item); navigate('/cart') }
 
   return (

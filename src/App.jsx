@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Login from './pages/Login'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import SearchResults from './pages/SearchResults'
@@ -16,6 +17,7 @@ export default function App(){
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<Login />} />
         <Route path="/product/:id" element={<ProductDetail/>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<SearchResults />} /> 

@@ -116,7 +116,7 @@ export default function Home() {
         </section>
 
         {/* Mọi người cũng tìm kiếm */}
-        // mock data
+        
         <section className="popular-searches container" aria-label="Mọi người cũng tìm kiếm">
           <h4 className="popular-title">Mọi người cũng tìm kiếm</h4>
           <div className="tags-wrap">

@@ -159,10 +159,11 @@ img {
     gap: 8px;
     align-items: center;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     padding: 6px 8px;
     border-radius: 8px;
 }
+
 
 .top-actions .action i {
     font-size: 16px;
@@ -731,3 +732,73 @@ img {
     padding: 6px 8px;
     font-size: 12px;
 }
+
+
+/* ===== Fix "Xin chào" trong header ===== */
+.top-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* chung cho từng action (icon + label) */
+.top-actions .action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #fff;               /* chữ trắng trên topbar đỏ */
+  background: transparent;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;       /* ngăn xuống dòng */
+}
+
+/* label text (tách riêng để dễ control) */
+.top-actions .action .label {
+  display: inline-block;
+  max-width: 120px;          /* giới hạn, tránh đẩy layout */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+}
+
+/* riêng cho nút welcome (nếu cần style khác) */
+.top-actions .action.welcome {
+  background: rgba(255,255,255,0.04);
+}
+
+/* cart badge */
+.cart-badge {
+  display: inline-block;
+  min-width: 20px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  background: #fff;
+  color: var(--brand-primary);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* Responsive: ẩn label trên màn nhỏ để khỏi chiếm chỗ */
+@media (max-width: 760px) {
+  .top-actions .action .label { display: none; }
+  .search-wrap { display: none; } /* nếu muốn ẩn search trên mobile, tuỳ chọn */
+}
+
+/* Nếu có inline style cứng ở JSX (ví dụ style={{display: 'flex', gap:8}}), CSS trên vẫn ưu tiên
+   nhưng để chắc chắn, tăng specificity cho label nếu cần: */
+.top-actions .action .label {
+  max-width: 110px;
+}
+
+/* Optional: nếu chữ vẫn bị mờ do color, đảm bảo contrast */
+.top-actions .action .label { color: rgba(255,255,255,0.95); }

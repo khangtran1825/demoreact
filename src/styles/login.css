@@ -1,0 +1,92 @@
+/* simple login styles matching your site's design */
+.login-page {
+  padding: 40px 16px;
+  min-height: calc(100vh - var(--topbar-h, 60px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.login-card h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.login-card .muted {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.form-error {
+  background: #ffefef;
+  border: 1px solid rgba(221,0,0,0.08);
+  color: #c00;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.login-form .field {
+  margin-bottom: 12px;
+}
+
+.login-form .label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.02);
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.small { font-size: 13px; }
+
+.btn.full {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.divider {
+  text-align: center;
+  margin: 12px 0;
+  color: var(--muted);
+  font-weight: 700;
+}
