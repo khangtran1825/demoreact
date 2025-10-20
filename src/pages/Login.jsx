@@ -73,18 +73,20 @@ export default function Login() {
           </div>
 
           <button type="submit" className="btn btn-primary full" disabled={loading}>
-            {loading ? 'Đang đăng nhập...' : 'Đăng nhập bằng email'}
+            {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
           </button>
+          <a className="forgot-password" href="">Quên mật khẩu?</a>
         </form>
 
         <div className="divider">Hoặc</div>
 
         <GoogleLogin clientId="REPLACE_WITH_GOOGLE_CLIENT_ID" onSuccess={onLoginSuccess} />
         <PhoneLogin onSuccess={onLoginSuccess} />
+        <p className="register">Bạn chưa có tài khoản? <a className="register-link" href="">Đăng ký ngay!</a></p>
       </div>
     </main>
 
-      </>
+    </>
       
   )
 }

@@ -28,7 +28,7 @@
 /* Card */
 .login-card {
   width: 100%;
-  max-width: 520px;
+  max-width: 400px;
   background: #fff;
   border-radius: 12px;
   padding: 22px;
@@ -147,7 +147,7 @@
 
 /* Divider */
 .divider {
-  margin: 14px 0;
+  margin: 12px 0;
   text-align: center;
   font-weight: 700;
   color: var(--muted);
@@ -317,4 +317,49 @@
   background: transparent;
   font-size: 20px;
   cursor: pointer;
+}
+
+.phone-login-form {
+  text-align: center;
+  margin-top: 8px;
+  height: 40px;
+} 
+
+.phone-login-btn {
+  width: 220px;
+  height: 40px;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  border-color: rgba(0, 0, 0, 0.1);
+  font-family: "Google Sans", arial, sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.phone-login-btn:hover {
+  background-color: rgba(154, 205, 235, 0.15);
+}
+
+.forgot-password {
+  margin-top: 12px;
+  display: block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: right;
+  text-decoration: none;
+}
+
+.register {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.register-link {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 600;
 }

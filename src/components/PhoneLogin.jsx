@@ -56,8 +56,8 @@ export default function PhoneLogin({ onSuccess: onLoginSuccess }) {
   }
 
   return (
-    <div style={{ marginTop: 8 }}>
-      <button onClick={() => { setShowPhoneForm(true); }}>Đăng nhập bằng SMS</button>
+    <div className="phone-login-form">
+      <button className="phone-login-btn" onClick={() => { setShowPhoneForm(true); }}>Đăng nhập bằng SMS</button>
 
       {showPhoneForm && (
         <div className="phone-overlay" role="dialog" aria-modal="true" onClick={() => setShowPhoneForm(false)}>
