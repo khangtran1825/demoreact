@@ -82,7 +82,7 @@ export default function Login() {
 
         <GoogleLogin clientId="REPLACE_WITH_GOOGLE_CLIENT_ID" onSuccess={onLoginSuccess} />
         <PhoneLogin onSuccess={onLoginSuccess} />
-        <p className="register">Bạn chưa có tài khoản? <a className="register-link" href="">Đăng ký ngay!</a></p>
+        <p className="register">Bạn chưa có tài khoản? <a className="register-link" onClick={() => {navigate('/register')}}>Đăng ký ngay!</a></p>
       </div>
     </main>
 

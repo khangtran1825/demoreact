@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Register from './pages/Register'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import SearchResults from './pages/SearchResults'
@@ -18,6 +19,7 @@ export default function App(){
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/product/:id" element={<ProductDetail/>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<SearchResults />} /> 
